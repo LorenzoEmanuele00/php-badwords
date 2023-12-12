@@ -1,8 +1,6 @@
 <?php
 $message = $_GET['message'];
 $bad_word = $_GET['bad_word'];
-
-echo $bad_word;
 ?>
 
 <!DOCTYPE html>
@@ -15,13 +13,17 @@ echo $bad_word;
 </head>
 
 <body>
+    <h2>il messaggio originale è:</h2>
+    <p><?php echo $message; ?></p>
+    <p>il messaggio è lungo: <?php echo strlen($message); ?></p>
 
     <h2>Frase cambiata:</h2>
     <?php
-    $new_string = str_replace($bad_word, '***', $message);
+    $new_message = str_replace($bad_word, '*** ', $message);
     ?>
 
-    <p><?php echo $new_string; ?></p>
+    <p><?php echo $new_message; ?></p>
+    <p>il messaggio è lungo: <?php echo strlen($new_message); ?></p>
 </body>
 
 </html>
